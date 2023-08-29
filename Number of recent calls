@@ -1,0 +1,21 @@
+class RecentCounter {
+ List<int> c = [];
+  int i = 0;
+ 
+  int ping(int t) {
+   c.add(t);
+   
+    while (i < c.length && !(t - 3000 <= c[i] && c[i] <= t)) {
+      i++;
+    }
+
+    return c.length - i;
+  
+  }
+}
+
+/**
+ * Your RecentCounter object will be instantiated and called as such:
+ * RecentCounter obj = RecentCounter();
+ * int param1 = obj.ping(t);
+ */
